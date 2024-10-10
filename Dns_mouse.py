@@ -26,5 +26,11 @@ def scan_de_diretorios(url, wordlist):
         
         try:
             # envia uma requisição GET para o diretorio
-            responde = requests.get(diretorio_url)
+            resposta = requests.get(diretorio_url)
             
+            if resposta.status_code == 200:
+                print(f"{GREEN}[+] Diretório encontrado: {diretorio_url}{RESET}")
+                
+        except requests.exceptions.RequestException as e:
+            print(f"[!] erro ao tentar acessar {diretorio_url}: {str:(e)}")
+            continue
