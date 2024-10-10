@@ -34,3 +34,20 @@ def scan_de_diretorios(url, wordlist):
         except requests.exceptions.RequestException as e:
             print(f"[!] erro ao tentar acessar {diretorio_url}: {str:(e)}")
             continue
+
+# função principal
+def main():
+    parser = argparse.ArgumentParser(
+        descrição = "Ferramenta de varredura de diretorios"
+    )
+    
+    parser.add_argument("url", help="URL alvo para varredura (exemplo: http://example.com)")
+    parser.add_argument("wordlist", help="Caminho para a wordlist (exemplo: /path/to/wordlist.txt)")
+    
+    args = parser.parse_args()
+    
+    show_header()
+    scan_de_diretorios(args.url, args.wordlist)
+
+if __name__ == "__main__":
+    main()
