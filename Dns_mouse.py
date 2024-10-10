@@ -38,7 +38,7 @@ def scan_de_diretorios(url, wordlist):
 # função principal
 def main():
     parser = argparse.ArgumentParser(
-        descrição = "Ferramenta de varredura de diretorios"
+        descricao = "Ferramenta de varredura de diretorios"
     )
     
     parser.add_argument("url", help="URL alvo para varredura (exemplo: http://example.com)")
