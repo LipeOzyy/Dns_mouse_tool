@@ -51,6 +51,8 @@ def main():
     print(f"URL: {args.url}")
     print(f"Wordlist: {args.wordlist}")
 
+    show_header()
+    scan_de_diretorios(args.url, args.wordlist)
 
 if __name__ == "__main__":
     main()
